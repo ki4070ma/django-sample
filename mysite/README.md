@@ -15,8 +15,13 @@
       * To check sql execution on migration
    * ```python manage.py migrate```
       * Migrate polls table into sqlite database 
+5. Browse sqlite data via Django API
+   * ```python manage.py shell```
+   * See https://docs.djangoproject.com/ja/2.1/intro/tutorial02/
 
 # Reference
 * Writing your first Django app, part 1
    * https://docs.djangoproject.com/en/2.1/intro/tutorial01/
    * https://docs.djangoproject.com/ja/2.1/intro/tutorial01/
+* SQLite browser
+   * https://sqlitebrowser.org/
