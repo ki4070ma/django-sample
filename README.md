@@ -5,7 +5,7 @@
 1. Create project
    * ```django-admin start project mysite```
 2. Run server for development
-   * ```python manage.py runserver {0:8080}```
+   * ```python manage.py runserver [0:8080]```
 3. Create application
    * ```python manage.py startapp polls```
 4. Set up database
@@ -18,6 +18,9 @@
 5. Browse sqlite data via Django API
    * ```python manage.py shell```
    * See https://docs.djangoproject.com/ja/2.1/intro/tutorial02/
+
+# Run tests
+* ```python manage.py test polls```
 
 # Reference
 * Writing your first Django app, part 1
