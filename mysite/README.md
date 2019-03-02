@@ -10,6 +10,11 @@
    * ```python manage.py startapp polls```
 4. Set up database
    * ```python manage.py migrate```
+   * ```python manage.py makemigrations polls```
+   * ```python manage.py sqlmigrate polls 0001```
+      * To check sql execution on migration
+   * ```python manage.py migrate```
+      * Migrate polls table into sqlite database 
 
 # Reference
 * Writing your first Django app, part 1
