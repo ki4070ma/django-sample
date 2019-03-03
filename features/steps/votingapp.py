@@ -63,7 +63,6 @@ def step_imple(context, text):
 @then('On the details view: User should be able to see "{text}" as title')
 def step_imple(context, text):
     # FIXME Can't catch h1 text
-    print(text)
     els = context.browser.find_elements_by_xpath("//h1")
     print(els[0].text)
 
@@ -83,33 +82,20 @@ def step_imple(context, text):
 
 @when('On the result view: User clicks "{text}"')
 def step_imple(context, text):
-    pass
+    el = context.browser.find_element_by_xpath("//a[contains(@href, 'polls')]")
+    el.click()
 
 ## **THEN(Result)**
 
 @then('On the result view: User should be able to see "{text}" as title')
 def step_imple(context, text):
-    pass
+    # FIXME Can't catch h1 text
+    els = context.browser.find_elements_by_xpath("//h1")
+    print(els[0].text)
 
-@then('On the result view: User should be able to see "{text}" as choise')
-def step_imple(context, text):
-    pass
-
-@then('On the result view: User should be able to see "{text}" is {num} vote')
-def step_imple(context, text, num):
-    pass
-
-# ----------------------------------------
-
-@given('')
-def step_imple(context):
-    pass
-
-@when('')
-def step_imple(context):
-    pass
-
-@then('')
-def step_imple(context):
-    pass
-
+@then('On the result view: User should be able to see "{text}" is {vote}')
+def step_imple(context, text, vote):
+    for el in context.browser.find_elements_by_xpath("//li"):
+        if "{} -- {}".format(text, vote) == el.text:
+            return
+    assert False

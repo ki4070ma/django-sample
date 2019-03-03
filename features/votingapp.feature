@@ -15,9 +15,9 @@ Feature: Voting web app
 
     When On the details view: User clicks "Vote" button
     Then On the result view: User should be able to see "What's up?" as title
-    And On the result view: User should be able to see "Not much" is "1" vote
-    And On the result view: User should be able to see "The sky" is "0" vote
-    And On the result view: User should be able to see "Just hacking again" is "0" vote
+    And On the result view: User should be able to see "Not much" is 1 vote
+    And On the result view: User should be able to see "The sky" is 0 votes
+    And On the result view: User should be able to see "Just hacking again" is 0 votes
 
     When On the result view: User clicks "Vote again?"
     Then On the details view: User should be able to see "What's up?" as title
