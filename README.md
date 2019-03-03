@@ -22,6 +22,12 @@
 # Run tests
 * ```python manage.py test polls```
 
+# Run tests via behave
+* Initialize database and run server
+   * ```bash initialize_model.sh && python manage.py runserver```
+* Run test
+   * ```behave```
+
 # Development
 * Autopep
    * ```python -m autopep8 -r --global-config .config-pep8 -i .```
@@ -32,3 +38,5 @@
    * https://docs.djangoproject.com/ja/2.1/intro/tutorial01/
 * SQLite browser
    * https://sqlitebrowser.org/
+* Selenium web driver doc
+   * https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webdriver

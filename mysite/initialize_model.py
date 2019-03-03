@@ -9,3 +9,6 @@ q.save()
 q.choice_set.create(choice_text='Not much', votes=0)
 q.choice_set.create(choice_text='The sky', votes=0)
 q.choice_set.create(choice_text='Just hacking again', votes=0)
+
+from django.contrib.auth.models import User
+User.objects.create_superuser('admin', 'admin@example.com', 'adminpass')
