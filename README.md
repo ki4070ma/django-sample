@@ -22,6 +22,12 @@
 # Run tests
 * ```python manage.py test polls```
 
+# Run tests via behave
+* Initialize database and run server
+   * ```bash initialize_model.sh && python manage.py runserver```
+* Run test
+   * ```behave```
+
 # Development
 * Autopep
    * ```python -m autopep8 -r --global-config .config-pep8 -i .```
