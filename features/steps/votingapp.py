@@ -1,3 +1,5 @@
+import time
+
 from behave import *
 
 @given('User accesses to voting web app')
@@ -10,6 +12,20 @@ def step_imple(context):
 
 @when('On the top view: User clicks "{text}" question')
 def step_imple(context, text):
+    # TODO Create locator class
+    els = context.browser.find_elements_by_xpath("//a[contains(@href, 'polls')]")
+
+    # FIXME last element doesn't have text...
+    # for el in els:
+    #     if text in el.text:
+    #         el.click()
+    els[0].click()
+
+## **THEN(Result)**
+
+@then('On the top view: User should be able to see {num} question, "{text}"')
+def step_imple(context, num, text):
+    # TODO Create locator class
     els = context.browser.find_elements_by_xpath("//a[contains(@href, 'polls')]")
     assert len(els) == 1
 
@@ -18,12 +34,6 @@ def step_imple(context, text):
     # for i, el in enumerate(els):
     #     print(el.text)
 
-## **THEN(Result)**
-
-@then('On the top view: User should be able to see {num} question, "{text}"')
-def step_imple(context, num, text):
-    pass
-
 
 # ***DETAILS VIEW***
 
@@ -31,21 +41,37 @@ def step_imple(context, num, text):
 
 @when('On the details view: User clicks "{text}" button')
 def step_imple(context, text):
-    pass
+    el = context.browser.find_element_by_xpath("//input[@value='Vote']")
+    el.click()
 
 @when('On the details view: User clicks "{text}" choice')
 def step_imple(context, text):
-    pass
+    els = context.browser.find_elements_by_xpath("//label[contains(@for,'choice')]")
+    idx = -1
+    for i, el in enumerate(els):
+        if el.text == text:
+            idx = 1+i  # Idx starts with 1
+    # print([i for i, el in enumerate(els) if text == el.text])  # TODO Doesn't work somehow
+    assert idx != -1
+    el = context.browser.find_element_by_id("choice{}".format(idx))
+    assert not el.is_selected()
+    el.click()
+    assert el.is_selected()
 
 ## **THEN(Result)**
 
 @then('On the details view: User should be able to see "{text}" as title')
 def step_imple(context, text):
-    pass
+    # FIXME Can't catch h1 text
+    print(text)
+    els = context.browser.find_elements_by_xpath("//h1")
+    print(els[0].text)
 
 @then('On the details view: User should be able to see "{text}" as choice')
 def step_imple(context, text):
-    pass
+    # TODO Create locator class
+    els = context.browser.find_elements_by_xpath("//label[contains(@for,'choice')]")
+    assert len([ el.text for el in els if text == el.text ]) == 1
 
 @then('On the details view: User should be able to see "{text}" selected')
 def step_imple(context, text):
