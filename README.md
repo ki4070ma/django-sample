@@ -22,6 +22,10 @@
 # Run tests
 * ```python manage.py test polls```
 
+# Development
+* Autopep
+   * ```python -m autopep8 -r --global-config .config-pep8 -i .```
+
 # Reference
 * Writing your first Django app, part 1
    * https://docs.djangoproject.com/en/2.1/intro/tutorial01/
