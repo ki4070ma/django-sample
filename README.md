@@ -32,3 +32,5 @@
    * https://docs.djangoproject.com/ja/2.1/intro/tutorial01/
 * SQLite browser
    * https://sqlitebrowser.org/
+* Selenium web driver doc
+   * https://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webdriver

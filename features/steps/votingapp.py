@@ -2,7 +2,7 @@ from behave import *
 
 @given('User accesses to voting web app')
 def step_imple(context):
-    pass
+    context.browser.get('http://localhost:8000/polls/')
 
 # ***TOP VIEW***
 
@@ -10,8 +10,13 @@ def step_imple(context):
 
 @when('On the top view: User clicks "{text}" question')
 def step_imple(context, text):
-    print('1')
-    pass
+    els = context.browser.find_elements_by_xpath("//a[contains(@href, 'polls')]")
+    assert len(els) == 1
+
+    # FIXME last element doesn't have text...
+    # assert els[0].text == text
+    # for i, el in enumerate(els):
+    #     print(el.text)
 
 ## **THEN(Result)**
 
