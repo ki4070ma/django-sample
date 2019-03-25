@@ -1,3 +1,5 @@
+[![Job Status](https://inspecode.rocro.com/badges/github.com/ki4070ma/django-sample/status?token=N1SD8z0OyquMVWLtLn7_LTCq-uSng7BvaUZekdMtCGg)](https://inspecode.rocro.com/jobs/github.com/ki4070ma/django-sample/latest?completed=true) [![Report](https://inspecode.rocro.com/badges/github.com/ki4070ma/django-sample/report?token=N1SD8z0OyquMVWLtLn7_LTCq-uSng7BvaUZekdMtCGg&branch=master)](https://inspecode.rocro.com/reports/github.com/ki4070ma/django-sample/branch/master/summary)
+
 # Readme
 * To learn backend
 
